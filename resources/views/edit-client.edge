@@ -1,0 +1,161 @@
+@layout('layouts.master')
+
+@section('main')
+
+			<!-- Main Content -->
+			<div class="page-wrapper">
+				<div class="container-fluid">
+					<!-- Title -->
+					<div class="row heading-bg">
+						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+						  <h5 class="txt-dark">Editar Producto</h5>
+						</div>
+						<!-- Breadcrumb -->
+						<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+						  <ol class="breadcrumb">
+							<li><a href="index.html">Panel</a></li>
+							<li><a href="productos.html"><span>Productos</span></a></li>
+							<li class="active"><span>Editar Producto</span></li>
+						  </ol>
+						</div>
+						<!-- /Breadcrumb -->
+					</div>
+					<!-- /Title -->
+					
+					<!-- Row -->
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="form-wrap">
+											<form action="#">
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-info-outline mr-10"></i>Acerca del producto</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Nombre Producto</label>
+															<input type="text" id="firstName" class="form-control" placeholder="Nombre">
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Codigo Producto</label>
+															<input type="text" id="codigoprod" class="form-control" placeholder="1h56">
+														</div>
+													</div>
+													
+													
+													<!--/span-->
+												</div>
+												<!-- Row -->
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Categoria</label>
+															<select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+																<option value="Category 1">Categoria 1</option>
+																<option value="Category 2">Categoria 2</option>
+																<option value="Category 3">Categoria 3</option>
+																<option value="Category 4">Categoria 4</option>
+															</select>
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Deripción Corta</label>
+															<input type="text" id="lastName" class="form-control" placeholder="descripcion corta">
+														</div>
+													</div>
+													<!--/span-->
+												</div>
+												<!--/row-->
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Precio</label>
+															<div class="input-group">
+																<div class="input-group-addon"><i class="ti-money"></i></div>
+																<input type="text" class="form-control" id="exampleInputuname" placeholder="20000">
+															</div>
+														</div>
+													</div>
+													<!--/span-->
+													
+													<!--/span-->
+												</div>
+												<div class="seprator-block"></div>
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-comment-text mr-10"></i>Descripción Producto</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<textarea class="form-control" rows="4">descripción completa del producto</textarea>
+														</div>
+													</div>
+												</div>
+												<!--/row-->
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Meta Title</label>
+															<input type="text" class="form-control">
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Meta Keyword</label>
+															<input type="text" class="form-control">
+														</div>
+													</div>
+												</div>
+												<div class="seprator-block"></div>
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-collection-image mr-10"></i>Cargar Imagen</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-lg-12">
+														<div class="img-upload-wrap">
+															<img class="img-responsive" src="dist/img/chair.jpg" alt="upload_img"> 
+														</div>
+														<div style="background-color: #069737; border: #069737" class="fileupload btn btn-info btn-anim"><i class="fa fa-upload"></i><span  class="btn-text">Cargar Imagen</span>
+															<input type="file" class="upload">
+														</div>
+													</div>
+												</div>
+												<div class="seprator-block"></div>
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-calendar-note mr-10"></i>Guardar Cambios</h6>
+												<hr class="light-grey-hr"/>
+												
+												<div class="form-actions">
+													<button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>Guardar</span></button>
+													<button type="button" class="btn btn-warning pull-left">Cancelar</button>
+													<div class="clearfix"></div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Row -->
+
+				</div>
+				
+				<!-- Footer -->
+				<footer class="footer container-fluid pl-30 pr-30">
+					<div class="row">
+						<div class="col-sm-12">
+							<p>2020 &copy; Copyright IDDOMINIO</p>
+						</div>
+					</div>
+				</footer>
+				<!-- /Footer -->
+				
+			</div>
+			<!-- /Main Content -->
+		@endsection

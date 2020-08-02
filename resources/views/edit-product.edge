@@ -1,0 +1,153 @@
+@layout('layouts.master2')
+@section('main')
+
+			<!-- Main Content -->
+			<div class="page-wrapper">
+				<div class="container-fluid">
+					<!-- Title -->
+					<div class="row heading-bg">
+						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+						  <h5 class="txt-dark">Agregar Producto</h5>
+						</div>
+						<!-- Breadcrumb -->
+						<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+						  <ol class="breadcrumb">
+							<li><a href="index.html">Panel</a></li>
+							<li class="active"><span>Agregar Producto</span></li>
+						  </ol>
+						</div>
+						<!-- /Breadcrumb -->
+					</div>
+					<!-- /Title -->
+					
+					<!-- Row -->
+				<form method="POST" action="{{ route('ProductController.update') }}" enctype="multipart/form-data">
+					{{ csrfField() }}
+				<input type="hidden" value="{{product.id}}" name="id">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="form-wrap">
+											
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-info-outline mr-10"></i>Acerca del producto</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Nombre Producto</label>
+														<input type="text" name="name" id="firstName" class="form-control" placeholder="Nombre" value="{{product.name}}">
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Código Producto</label>
+															<input type="text" name="code" id="codigoprod" class="form-control" placeholder="Código" value="{{product.code}}">
+														</div>
+													</div>
+													
+													
+													<!--/span-->
+												</div>
+												<!-- Row -->
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Categoria</label>
+															<select class="form-control" name="category" data-placeholder="Choose a Category" tabindex="1">
+																<option value="{{product.category}}" selected>{{product.category}}</option>
+																@each(category in categories)
+																	<option value="{{category.name}}">{{category.name}}</option>
+																@endeach
+																
+															
+															</select>
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Descripción Corta</label>
+															<input type="text" name="short_description" id="lastName" class="form-control" placeholder="Descripcion corta" value="{{product.short_description}}">
+														</div>
+													</div>
+													<!--/span-->
+												</div>
+												<!--/row-->
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Precio</label>
+															<div class="input-group">
+																<div class="input-group-addon"><i class="ti-money"></i></div>
+																<input type="text" name="price" class="form-control" id="exampleInputuname" placeholder="20000" value="{{product.price}}">
+															</div>
+														</div>
+													</div>
+													<!--/span-->
+													
+													<!--/span-->
+												</div>
+												<div class="seprator-block"></div>
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-comment-text mr-10"></i>Descripción Producto</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<textarea class="form-control" name="long_description" rows="4" placeholder="Descripción completa del producto">{{product.long_description}}</textarea>
+														</div>
+													</div>
+												</div>
+												<!--/row-->
+												<div class="row">
+													
+												</div>
+												<div class="seprator-block"></div>
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-collection-image mr-10"></i>Cargar Imagen</h6>
+												<hr class="light-grey-hr"/>
+												<div class="row">
+													<div class="img-upload-wrap">
+														<img class="img-responsive" src="/files/{{product.id}}.png" onerror="this.src='dist/img/chair.jpg'; alt="{{product.name}}" style="height:200px;"> 
+														<br>
+													</div>
+													<div class="col-lg-12">
+														<div style="background-color: #069737; border: #069737" class="fileupload btn btn-info btn-anim"><i class="fa fa-upload"></i><span  class="btn-text">Cargar Imagen</span>
+															<input type="file" class="upload" name="image">
+														</div>
+													</div>
+												</div>
+												<div class="seprator-block"></div>
+												
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-calendar-note mr-10"></i>Editar Producto</h6>
+												<hr class="light-grey-hr"/>
+												<div class="form-actions">
+													<input type="submit" class="btn btn-success btn-icon left-icon mr-10 pull-left" value="Editar">
+													
+													<div class="clearfix"></div>
+												</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Row -->
+				</form>
+				</div>
+				
+				<!-- Footer -->
+				<footer class="footer container-fluid pl-30 pr-30">
+					<div class="row">
+						<div class="col-sm-12">
+							<p>2020 &copy; Copyright IDDOMINIO</p>
+						</div>
+					</div>
+				</footer>
+				<!-- /Footer -->
+				
+			</div>
+			<!-- /Main Content -->
+		@endsection

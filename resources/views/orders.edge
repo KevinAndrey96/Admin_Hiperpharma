@@ -1,0 +1,120 @@
+@layout('layouts.master')
+
+@section('main')
+
+        <!-- Main Content -->
+		<div class="page-wrapper">
+            <div class="container-fluid">
+				
+				<!-- Title -->
+				<div class="row heading-bg">
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+						<h5 class="txt-dark">Ordenes</h5>
+					</div>
+					<!-- Breadcrumb -->
+					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+						<ol class="breadcrumb">
+							<li><a href="index.html">Panel</a></li>
+							<li class="active"><span>Ordenes</span></li>
+						</ol>
+					</div>
+					<!-- /Breadcrumb -->
+				</div>
+				<!-- /Title -->
+				
+				<!-- Row -->
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">Lista de Pedidos</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="table-wrap">
+										<div class="table-responsive">
+											<table id="datable_1" class="table  display table-hover mb-30">
+												<thead>
+													<tr>
+														<th>#Pedido</th>
+														<th>Cliente</th>
+														<th>Valor</th>
+														<th>Estado</th>
+														<th>Fecha Compra</th>
+														<th>Ver pedido</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<tr>
+														<td>#5012</td>
+														<td>Empresa</td>
+														<td>$205.500</td>
+														<td>
+															<span class="label label-danger">Sin pago</span>
+														</td>
+														<td>2011/04/25</td>
+														<td>
+															<a href="ordenes-detalle.html">
+																<i class="fa fa-file-text-o" aria-hidden="true"></i>
+															</a>	
+														</td>
+													</tr>
+													<tr>
+														<td>#5013</td>
+														<td>Empresa</td>
+														<td>$205.500</td>
+														<td>
+															<span class="label label-success">Pago</span>
+														</td>
+														<td>2011/07/25</td>
+														<td>
+															<a href="ordenes-detalle.html">
+																<i class="fa fa-file-text-o" aria-hidden="true"></i>
+															</a>	
+														</td>
+													</tr>
+													<tr>
+														<td>#5014</td>
+														<td>Empresa</td>
+														<td>$205.500</td>
+														<td>
+															<span class="label label-warning">Pendiente</span>
+														</td>
+														<td>2009/01/12</td>
+														<td>
+															<a href="ordenes-detalle.html">
+																<i class="fa fa-file-text-o" aria-hidden="true"></i>
+															</a>	
+														</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									</div>	
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row -->
+			
+			</div>
+			
+			<!-- Footer -->
+			<footer class="footer container-fluid pl-30 pr-30">
+				<div class="row">
+					<div class="col-sm-12">
+						<p>2020 &copy; Copyright IDDOMINIO</p>
+					</div>
+				</div>
+			</footer>
+			<!-- /Footer -->
+			
+		</div>
+        <!-- /Main Content -->
+@endsection
