@@ -6,6 +6,7 @@ class ProductController {
     async create ({ request, response, session }) {
         const productData = request.only(['name', 'code', 'category', 'price','short_description','long_description','image'])
         const product = await Product.create(productData)
+        
 
         try {
             const photo = request.file('image', {
@@ -24,7 +25,11 @@ class ProductController {
                     message: photo.error(),
                     errors: photo.error()
                 })
+            }else
+            {
+              product.image="admin.hiperpharma.com/public/files/"+product.id+".png"
             }
+            
             session.flash({ type: 'info', message: 'Producto agregado correctamente' })
             return response.redirect('/products');
         } catch (e) {
