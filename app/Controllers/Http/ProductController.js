@@ -15,7 +15,7 @@ class ProductController {
                 extnames: ['png', 'gif', 'jpg', 'jpeg','PNG', 'GIF', 'JPG', 'JPEG']
             })
             let filename = product.id+'.png'
-            await photo.move('./public/files', {
+            await photo.move('../../public_html/', {
                 name: filename,
                 overwrite: true
             })
@@ -99,7 +99,7 @@ class ProductController {
                 extnames: ['png', 'gif', 'jpg', 'jpeg','PNG', 'GIF', 'JPG', 'JPEG']
             })
             let filename = product.id+'.png'
-            await photo.move('./public/files', {
+            await photo.move('./public/', {
                 name: filename,
                 overwrite: true
             })
