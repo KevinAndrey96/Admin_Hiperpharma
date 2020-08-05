@@ -29,6 +29,7 @@ class ProductController {
             {
               product.image="admin.hiperpharma.com/public/files/"+product.id+".png"
             }
+            product.save()
             
             session.flash({ type: 'info', message: 'Producto agregado correctamente' })
             return response.redirect('/products');
