@@ -27,7 +27,7 @@ class ProductController {
                 })
             }else
             {
-              product.image="../product.id+".png"
+              product.image="../"+product.id+".png"
             }
             product.save()
             
