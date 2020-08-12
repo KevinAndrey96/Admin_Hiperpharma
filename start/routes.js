@@ -34,9 +34,7 @@ Route.get('logout', 'UserController.logout')
   })
   Route.get('add-product', 'ProductController.new')
   Route.post('add-product', 'ProductController.create')
-  Route.get('clients', ({ view }) => {
-    return view.render('clients')
-  })
+  Route.get('clients', 'ClientController.index')
   Route.get('dashboard', ({ view }) => {
     return view.render('dashboard')
   })

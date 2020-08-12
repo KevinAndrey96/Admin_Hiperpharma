@@ -39,41 +39,28 @@
 											<table id="myTable1" class="table table-hover display  pb-30" >
 												<thead>
 												<tr>
-																	<th>No</th>
-																	<th>Nombre</th>
-																	<th>Correo</th>
-																	<th>Telefono</th>
-																	<th>Dirección</th>
-																</tr>
+													<th>Id</th>
+													<th>Nombre</th>
+													<th>Correo</th>
+													<th>Telefono</th>
+													<th>Dirección</th>
+													<th>Ciudad</th>
+													<th>País</th>
+												</tr>
 												</thead>
 											
 												<tbody>
+												@each(client in clients)
 												<tr>
-																	<td>1</td>
-																	<td><a href="#">Esteban</a></td>
-																	<td>jensds@gmail.com</td>
-																	<td>323 456 789</td>
-																	<td>calle 23 56</td>
-																
-																</tr>
-													<tr>
-																	<td>2</td>
-																	<td><a href="#">Maria</a></td>
-																	<td>marqwkh@gmail.com</td>
-																	<td>314 456 789</td>
-																	<td>carrera 23 45</td>
-																	
-																</tr>
-											
-												<tr>
-																	<td>3</td>
-																	<td><a href="#">Daniel</a></td>
-																	<td>ntasasavie@gmail.com</td>
-																	<td>315 456 789</td>
-																	<td>Diagonal 34 56</td>
-																	<td></td>
-																</tr>
-													
+													<td>{{client.id}}</td>
+													<td>{{client.name}}</a></td>
+													<td>{{client.email}}</td>
+													<td>{{client.phone}}</td>
+													<td>{{client.address}}</td>
+													<td>{{client.city}}</td>
+													<td>{{client.country}}</td>
+												</tr>
+												@endeach	
 												</tbody>
 											</table>
 										</div>
