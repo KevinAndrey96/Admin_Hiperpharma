@@ -58,9 +58,16 @@ Route.get('logout', 'UserController.logout')
   Route.get('profile', ({ view }) => {
     return view.render('profile')
   })
+
   Route.get('restore-pass', ({ view }) => {
     return view.render('restore-pass')
   })
   Route.get('restore-pass-c', ({ view }) => {
     return view.render('restore-pass-c')
+  })
+
+  Route.get('add-category', 'CategoryController.new')
+  Route.post('add-category', 'CategoryController.create')
+  Route.get('categories', ({ view }) => {
+    return view.render('categories')
   })
