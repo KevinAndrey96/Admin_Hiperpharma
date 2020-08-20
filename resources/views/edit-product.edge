@@ -109,7 +109,7 @@
 												<hr class="light-grey-hr"/>
 												<div class="row">
 													<div class="img-upload-wrap">
-														<img class="img-responsive" src="/files/{{product.id}}.png" onerror="this.src='dist/img/chair.jpg'; alt="{{product.name}}" style="height:200px;"> 
+														<img class="img-responsive" src="{{product.image}}" onError="this.onerror=null;this.src='{{ assetsUrl('placeholder.png') }}';" alt="{{product.name}}" style="height:200px;"> 
 														<br>
 													</div>
 													<div class="col-lg-12">

@@ -1,4 +1,4 @@
-@layout('layouts.master')
+@layout('layouts.master2')
 
 @section('main')
 			<div class="page-wrapper">
@@ -6,13 +6,13 @@
 					<!-- Title -->
 					<div class="row heading-bg">
 						<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						  <h5 class="txt-dark">Agregar Categoria</h5>
+						  <h5 class="txt-dark">Editar Categoria</h5>
 						</div>
 						<!-- Breadcrumb -->
 						<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 						  <ol class="breadcrumb">
 							<li><a href="index.html">Panel</a></li>
-							<li class="active"><span>Agregar Categoria</span></li>
+							<li class="active"><span>Editar Categoria</span></li>
 						  </ol>
 						</div>
 						<!-- /Breadcrumb -->
@@ -26,15 +26,16 @@
 								<div class="panel-wrapper collapse in">
 									<div class="panel-body">
 										<div class="form-wrap">
-										<form action="{{ route('CategoryController.create') }}" method="POST" enctype="multipart/form-data">
-											{{ csrfField() }}
+										<form action="{{ route('CategoryController.update') }}" method="POST" enctype="multipart/form-data">
+                                            {{ csrfField() }}
+                                                <input type="hidden" value="{{category.id}}" name="id">
 												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-info-outline mr-10"></i>Categorias</h6>
 												<hr class="light-grey-hr"/>
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="control-label mb-10">Nombre Categoria</label>
-															<input type="text" id="firstName" name="name" class="form-control" placeholder="Nombre">
+                                                        <input type="text" id="firstName" name="name" value="{{category.name}}" class="form-control" placeholder="Nombre">
 														</div>
 													</div>
 													
@@ -47,6 +48,10 @@
 												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-collection-image mr-10"></i>Cargar Imagen</h6>
 												<hr class="light-grey-hr"/>
 												<div class="row">
+                                                    <div class="img-upload-wrap">
+														<img class="img-responsive" src="{{category.image}}" onError="this.onerror=null;this.src='{{ assetsUrl('placeholder.png') }}';" alt="{{category.name}}" style="height:200px;"> 
+														<br>
+													</div>
 													<div class="col-lg-12">
 														<div style="background-color: #069737; border: #069737" class="fileupload btn btn-info btn-anim"><i class="fa fa-upload"></i><span  class="btn-text">Cargar Imagen</span>
 															<input type="file" name="image" class="upload">
@@ -54,11 +59,11 @@
 													</div>
 												</div>
 												<div class="seprator-block"></div>
-												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-calendar-note mr-10"></i>Agregar Categoria</h6>
+												<h6 class="txt-dark capitalize-font"><i class="zmdi zmdi-calendar-note mr-10"></i>Editar Categoria</h6>
 												<hr class="light-grey-hr"/>
 												
 												<div class="form-actions">
-													<button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>Agregar</span></button>
+													<button class="btn btn-success btn-icon left-icon mr-10 pull-left"> <i class="fa fa-check"></i> <span>Editar</span></button>
 													<div class="clearfix"></div>
 												</div>
 											</form>

@@ -77,7 +77,7 @@ class ProductController {
       }
       async new({ params, view }) {
         const categories = await Category.all()
-        return view.render("add-product", {categories: categories.toJSON()},);
+        return view.render("add-product", {categories: categories.toJSON()});
       }
 
       async update ({ request, response, session }) {
@@ -99,7 +99,7 @@ class ProductController {
                 extnames: ['png', 'gif', 'jpg', 'jpeg','PNG', 'GIF', 'JPG', 'JPEG']
             })
             let filename = product.id+'.png'
-            await photo.move('./public/', {
+            await photo.move('../public_html/', {
                 name: filename,
                 overwrite: true
             })

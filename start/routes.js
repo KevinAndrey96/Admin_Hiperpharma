@@ -54,7 +54,7 @@ Route.get('logout', 'UserController.logout')
     return view.render('edit-product')
   })*/
   Route.get("edit-product/:id", "ProductController.edit");
-  Route.post("edit-product/", "ProductController.update");
+  Route.post("edit-product", "ProductController.update");
   Route.get('profile', ({ view }) => {
     return view.render('profile')
   })
@@ -68,6 +68,8 @@ Route.get('logout', 'UserController.logout')
 
   Route.get('add-category', 'CategoryController.new')
   Route.post('add-category', 'CategoryController.create')
-  Route.get('categories', ({ view }) => {
-    return view.render('categories')
-  })
+  Route.get('categories', 'CategoryController.index')
+  Route.delete('categories', 'CategoryController.destroy')
+  
+  Route.get("edit-category/:id", "CategoryController.edit");
+  Route.post("edit-category", "CategoryController.update");

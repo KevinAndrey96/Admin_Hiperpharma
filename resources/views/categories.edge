@@ -36,15 +36,26 @@
 													</tr>
 												</thead>
 												<tbody>
+													@each(category in categories)
 													<tr>
-														<td>Aseo</td>
+														<td>{{category.name}}</td>
 														<td>
-															<img src="dist/img/chair.jpg" alt="iMac" width="80">
+															<img src="{{category.image}}" onError="this.onerror=null;this.src='placeholder.png';" alt="{{category.name}}" width="40">
 														</td>
 													
-														<td><a href="editar-productos.html" class="text-inverse pr-10" title="Editar" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="editar-productos.html" class="text-inverse" title="Borrar" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
+														<td>
+														<a href="/edit-category/{{category.id}}" class="text-inverse pr-10" title="Editar" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>
+															<form method="post" action="{{ route('CategoryController.destroy') }}?_method=delete">
+																{{ csrfField() }}
+																<input type="hidden" value="{{category.id}}" name="id">
+																	<button type="submit" class="fabutton">
+																		<i class="zmdi zmdi-delete txt-danger"></i>
+																	</button>
+															</form>
+														</td>
+														
 													</tr>
-													
+													@endeach
 												
 													
 													
