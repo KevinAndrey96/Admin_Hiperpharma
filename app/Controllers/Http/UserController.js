@@ -1,9 +1,12 @@
 'use strict'
+const Hash = use('Hash')
 
 class UserController {
     async login ({ request, auth, response }) {
+      
         const { email, password } = request.all()
         await auth.attempt(email, password)
+        
         return response.redirect('/dashboard');
       }
     show ({ auth, params }) {

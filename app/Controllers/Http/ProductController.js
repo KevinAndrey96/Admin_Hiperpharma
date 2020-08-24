@@ -73,7 +73,7 @@ class ProductController {
       async edit({ params, view }) {
         const product = await Product.find(params.id);
         const categories = await Category.all()
-        return view.render("edit-product", {product: product, categories: categories.toJSON()},);
+        return view.render("edit-product", {product: product, categories: categories.toJSON()});
       }
       async new({ params, view }) {
         const categories = await Category.all()

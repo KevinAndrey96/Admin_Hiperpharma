@@ -24,6 +24,7 @@ class UserSeeder {
     user.password=await Hash.make("123456")
     user.save()
     console.log(user)
+    //$2a$10$OV9I4iZHc7e9QWOFVCoFPeNSH7cLH3qOUYBqeEqxhwTySEir0W8du
   }
 }
 

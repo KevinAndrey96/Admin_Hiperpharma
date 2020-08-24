@@ -6,11 +6,11 @@ const Model = use('Model')
 class Order extends Model {
     Products()
     {
-        return this.hasMany('App/Models/Product')
+        return this.hasMany('App/Models/OrderProduct')
     }
     Client()
     {
-        return this.hasOne('App/Models/Client')
+        return this.belongsTo('App/Models/Client')
     }
 }
 

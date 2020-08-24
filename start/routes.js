@@ -18,6 +18,8 @@ const Route = use('Route')
 
 Route.on('/').render('login')
 
+Route.get("order-detail/:id", "OrderController.details");  
+
 Route.get('users/:id', 'UserController.show').middleware('auth')
 
 Route.post('login', 'UserController.login')
@@ -41,12 +43,7 @@ Route.get('logout', 'UserController.logout')
   Route.get('edit-client', ({ view }) => {
     return view.render('edit-client')
   })
-  Route.get('order-detail', ({ view }) => {
-    return view.render('order-detail')
-  })
-  Route.get('orders', ({ view }) => {
-    return view.render('orders')
-  })
+  
   Route.get('products', 'ProductController.index')
   Route.delete('products', 'ProductController.destroy')
 
@@ -73,3 +70,7 @@ Route.get('logout', 'UserController.logout')
   
   Route.get("edit-category/:id", "CategoryController.edit");
   Route.post("edit-category", "CategoryController.update");
+
+  Route.get("orders", "OrderController.index")
+
+  

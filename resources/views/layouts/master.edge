@@ -15,18 +15,18 @@
 	<meta name="author" content="Iddominio"/>
 	
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.png">
-	<link rel="icon" href="favicon.png" type="image/x-icon">
-	
+	<link rel="shortcut icon" href="{{assetsUrl('favicon.png')}}">
+	<link rel="icon" href="{{assetsUrl('favicon.png')}}" type="image/x-icon">
+
 	<!-- Morris Charts CSS -->
-    <link href="vendors/bower_components/morris.js/morris.css" rel="stylesheet" type="text/css"/>
-	
+    
+	{{ style('vendors/bower_components/morris.js/morris.css') }}
 	<!-- Data table CSS -->
 	
-	
-		
 	<!-- Custom CSS -->
-	<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+	
+	{{ style('dist/css/style.css') }}
+	
 </head>
 
 <body>
@@ -52,7 +52,7 @@
 				<div class="nav-header pull-left">
 					<div class="logo-wrap">
 						<a href="/index">
-							<img class="brand-img" src="dist/img/logo.png" alt="brand"/>
+							<img class="brand-img" src="{{assetsUrl('dist/img/logo.png')}}" alt="brand"/>
 							<span class="brand-text">Hiperpharma</span>
 						</a>
 					</div>
@@ -67,7 +67,7 @@
 					
 					
 					<li class="dropdown auth-drp">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="dist/img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="{{assetsUrl('dist/img/user1.png')}}" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
 						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
 							
 							<li>
@@ -154,49 +154,49 @@
 	<!-- JavaScript -->
 	
     <!-- jQuery -->
-    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+	{{ script('vendors/bower_components/jquery/dist/jquery.min.js') }}
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	{{ script('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}
     
 	<!-- Data table JavaScript -->
-	<script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+	{{ script('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}
 	
 	<!-- Slimscroll JavaScript -->
-	<script src="dist/js/jquery.slimscroll.js"></script>
+	{{ script('dist/js/jquery.slimscroll.js') }}
 	
 	<!-- simpleWeather JavaScript -->
-	<script src="vendors/bower_components/moment/min/moment.min.js"></script>
-	<script src="vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
-	<script src="dist/js/simpleweather-data.js"></script>
+	{{ script('vendors/bower_components/moment/min/moment.min.js') }}
+	{{ script('vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js') }}
+	{{ script('dist/js/simpleweather-data.js') }}
 	
 	<!-- Progressbar Animation JavaScript -->
-	<script src="vendors/bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
-	<script src="vendors/bower_components/jquery.counterup/jquery.counterup.min.js"></script>
+	{{ script('vendors/bower_components/waypoints/lib/jquery.waypoints.min.js') }}
+	{{ script('vendors/bower_components/jquery.counterup/jquery.counterup.min.js') }}
 	
 	<!-- Fancy Dropdown JS -->
-	<script src="dist/js/dropdown-bootstrap-extended.js"></script>
+	{{ script('dist/js/dropdown-bootstrap-extended.js') }}
 	
 	<!-- Sparkline JavaScript -->
-	<script src="vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+	{{ script('vendors/jquery.sparkline/dist/jquery.sparkline.min.js') }}
 	
 	<!-- Owl JavaScript -->
-	<script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+	{{ script('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}
 	
 	<!-- ChartJS JavaScript -->
-	<script src="vendors/chart.js/Chart.min.js"></script>
+	{{ script('vendors/chart.js/Chart.min.js') }}
 	
 	<!-- Morris Charts JavaScript -->
-    <script src="vendors/bower_components/raphael/raphael.min.js"></script>
-    <script src="vendors/bower_components/morris.js/morris.min.js"></script>
-    <script src="vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+	{{ script('vendors/bower_components/raphael/raphael.min.js') }}
+	{{ script('vendors/bower_components/morris.js/morris.min.js') }}
+	{{ script('vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js') }}
 	
 	<!-- Switchery JavaScript -->
-	<script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+	{{ script('vendors/bower_components/switchery/dist/switchery.min.js') }}
 	
 	<!-- Init JavaScript -->
-	<script src="dist/js/init.js"></script>
-	<script src="dist/js/dashboard-data.js"></script>
+	{{ script('dist/js/init.js') }}
+	{{ script('dist/js/dashboard-data.js') }}
 </body>
 
 </html>
