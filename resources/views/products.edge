@@ -2,6 +2,16 @@
 
 @section('main')
 
+<script>
+	function borrar(id)
+	{
+		var r = confirm("¿Está seguro?");
+		if (r == true) {
+			var formdel = document.getElementById("form-del-"+id);
+  			formdel.submit();
+		}
+	}
+</script>
 		<div class="page-wrapper">
             <div class="container-fluid">
 				<!-- Title -->
@@ -52,39 +62,19 @@
 															<td>{{ product.price }}</td>
 															<td>{{ product.short_description }}</td>
 															<td><a href="edit-product/{{product.id}}" class="text-inverse pr-10" title="Editar" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>
-															<form method="post" action="{{ route('ProductController.destroy') }}?_method=delete">
+															<button onclick="borrar({{product.id}})" class="fabutton">
+																<i class="zmdi zmdi-delete txt-danger"></i>
+															</button>
+															<form method="post" id="form-del-{{product.id}}" action="{{ route('ProductController.destroy') }}?_method=delete">
 																{{ csrfField() }}
 																<input type="hidden" value="{{product.id}}" name="id">
-																	<button type="submit" class="fabutton">
+																	<!--<button type="submit" class="fabutton">
 																		<i class="zmdi zmdi-delete txt-danger"></i>
-																	</button>
+																	</button>-->
 															</form>
 															</td>
 														</tr>
 														@endeach
-													<!--<tr>
-														<td class="txt-dark">Jabon</td>
-														<td class="txt-dark">#85457898</td>
-														<td>
-															<img src="dist/img/chair.jpg" alt="iMac" width="80">
-														</td>
-														<td>Aseo</td>
-														<td>20000</td>
-														<td>Jabon corporal</td>
-													
-														<td><a href="editar-productos.html" class="text-inverse pr-10" title="Editar" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="editar-productos.html" class="text-inverse" title="Borrar" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-													</tr>-->
-													<script>
-														
-														  console.log("{{ toJSON(products) }}") //this comes back as [Object object] ...
-														
-													  </script>
-													
-												
-													
-													
-													
-													
 													
 												</tbody>
 											</table>

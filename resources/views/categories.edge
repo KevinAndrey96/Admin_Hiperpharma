@@ -1,6 +1,17 @@
 @layout('layouts.master')
 
 @section('main')
+
+<script>
+	function borrar(id)
+	{
+		var r = confirm("¿Está seguro?");
+		if (r == true) {
+			var formdel = document.getElementById("form-del-"+id);
+  			formdel.submit();
+		}
+	}
+</script>
 		<div class="page-wrapper">
             <div class="container-fluid">
 				<!-- Title -->
@@ -45,12 +56,15 @@
 													
 														<td>
 														<a href="/edit-category/{{category.id}}" class="text-inverse pr-10" title="Editar" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>
-															<form method="post" action="{{ route('CategoryController.destroy') }}?_method=delete">
+															<button onclick="borrar({{category.id}})" class="fabutton">
+																<i class="zmdi zmdi-delete txt-danger"></i>
+															</button>
+															<form method="post" id="form-del-{{category.id}}" action="{{ route('CategoryController.destroy') }}?_method=delete">
 																{{ csrfField() }}
 																<input type="hidden" value="{{category.id}}" name="id">
-																	<button type="submit" class="fabutton">
+																	<!--<button type="submit" class="fabutton">
 																		<i class="zmdi zmdi-delete txt-danger"></i>
-																	</button>
+																	</button>-->
 															</form>
 														</td>
 														
