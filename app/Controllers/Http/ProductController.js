@@ -1,8 +1,9 @@
 'use strict'
 const Product = use('App/Models/Product')
 const Category = use('App/Models/Category')
-
+const URL="https://hiperpharma.com/"
 class ProductController {
+  
     async create ({ request, response, session }) {
         const productData = request.only(['name', 'code', 'category', 'price','short_description','long_description','image'])
         const product = await Product.create(productData)
@@ -27,7 +28,7 @@ class ProductController {
                 })
             }else
             {
-              product.image="../"+product.id+".png"
+              product.image=URL+product.id+".png"
             }
             product.save()
             
