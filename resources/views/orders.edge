@@ -42,7 +42,6 @@
 														<th>#Pedido</th>
 														<th>Cliente</th>
 														<th>Valor</th>
-														<th>Estado</th>
 														<th>Fecha Compra</th>
 														<th>Ver pedido</th>
 													</tr>
@@ -54,9 +53,7 @@
 													<td>{{order.id}}</td>
 													<td>{{order.Client.name}}</td>
 													<td>{{order.value}}</td>
-														<td>
-															<span class="label label-danger">{{order.status}}</span>
-														</td>
+														
 													<td>{{order.created_at}}</td>
 														<td>
 														<a href="/order-detail/{{order.id}}">

@@ -5,7 +5,7 @@ const URL="https://hiperpharma.com/"
 class ProductController {
   
     async create ({ request, response, session }) {
-        const productData = request.only(['name', 'code', 'category', 'price','short_description','long_description','image'])
+        const productData = request.only(['name', 'code', 'category', 'price','short_description','long_description','image', 'father'])
         const product = await Product.create(productData)
         
 

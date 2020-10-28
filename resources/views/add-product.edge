@@ -36,14 +36,14 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="control-label mb-10">Nombre Producto</label>
-															<input type="text" name="name" id="firstName" class="form-control" placeholder="Nombre">
+															<input type="text" required name="name" id="firstName" class="form-control" placeholder="Nombre">
 														</div>
 													</div>
 													<!--/span-->
 													<div class="col-md-6">
 														<div class="form-group">
 															<label class="control-label mb-10">Codigo Producto</label>
-															<input type="text" name="code" id="codigoprod" class="form-control" placeholder="Código de producto">
+															<input type="text" required name="code" id="codigoprod" class="form-control" placeholder="Código de producto">
 														</div>
 													</div>
 													
@@ -54,8 +54,8 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label mb-10">Categoria</label>
-															<select class="form-control" name="category" data-placeholder="Escoja una categoría" tabindex="1">
+															<label class="control-label mb-10">Categoria padre</label>
+															<select class="form-control" name="father" data-placeholder="Escoja una categoría" tabindex="1">
 																@each(category in categories)
 																	<option value="{{category.name}}">{{category.name}}</option>
 																@endeach
@@ -63,10 +63,11 @@
 														</div>
 													</div>
 													<!--/span-->
+													
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label mb-10">Deripción Corta</label>
-															<input type="text" name="short_description" id="lastName" class="form-control" placeholder="descripcion corta">
+															<label class="control-label mb-10">Categoria</label>
+															<input type="text" required name="category" id="lastName" class="form-control" placeholder="Categoria">
 														</div>
 													</div>
 													<!--/span-->
@@ -78,10 +79,17 @@
 															<label class="control-label mb-10">Precio</label>
 															<div class="input-group">
 																<div class="input-group-addon"><i class="ti-money"></i></div>
-																<input type="text" name="price" class="form-control" id="exampleInputuname" placeholder="20000">
+																<input type="text" required name="price" class="form-control" id="exampleInputuname" placeholder="20000">
 															</div>
+														</div>									
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label mb-10">Deripción Corta</label>
+															<input type="text" required name="short_description" id="lastName" class="form-control" placeholder="descripcion corta">
 														</div>
 													</div>
+													
 													<!--/span-->
 													
 													<!--/span-->

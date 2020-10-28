@@ -25,7 +25,7 @@
 							<div class="panel panel-default card-view">
 								<div class="panel-heading">
 									<div class="pull-left">
-										<h6 class="panel-title txt-dark">Pedido # {{order.id}}</h6>
+										<h6 class="panel-title txt-dark">Pedido #{{order.id}}</h6>
 									</div>
 									
 									<div class="clearfix"></div>
@@ -51,6 +51,8 @@
 													<span class="txt-dark head-font capitalize-font mb-5">Fecha de Pedido:</span>
 													<br>
 												{{order.created_at}}<br>
+												<br>
+												<h5>Referencia de pago: {{order.gateway}}</h5>
 												</address>
 											</div>
 										</div>

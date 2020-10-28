@@ -10,7 +10,7 @@ class OrderController {
         .with('Orders')
         .fetch()
         console.log(clients.toJSON())*/
-        const orders = await Order.query().with('Client').fetch()
+        const orders = await Order.query().with('Client').orderBy('id', 'desc').fetch()
         console.log(JSON.stringify(orders.toJSON()))
         return view.render("orders",{orders:orders.toJSON()})
     }
@@ -45,9 +45,6 @@ class OrderController {
             
             po.push(obj)
         }
-        
-        
-        console.log(po)
         
         return view.render("order-detail", {order: order, client: clientOrder, products: po})
     }
