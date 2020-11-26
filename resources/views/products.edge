@@ -46,7 +46,7 @@
 													<tr>
 														<th>Nombre</th>
 														<th>Codigo</th>
-														<th>Foto</th>
+														<!--<th>Foto</th>-->
 														<th>Categoria</th>
 														<th>Precio</th>
 														<th>Descripcion</th>
@@ -58,9 +58,9 @@
 														<tr>
 															<td class="txt-dark">{{ product.name }}</td>
 															<td class="txt-dark">{{ product.code }}</td>
-															<td>
-																<!--<img src="{{ product.image }}" alt="{{ product.name }}" width="80" onError="this.onerror=null;this.src='{{ assetsUrl('placeholder.png') }}';">-->
-															</td>
+															<!--<td>
+																<img src="{{ product.image }}" alt="{{ product.name }}" width="80" onError="this.onerror=null;this.src='{{ assetsUrl('placeholder.png') }}';">
+															</td>-->
 															<td>{{ product.category }}</td>
 															<td>{{ product.price }}</td>
 															<td>{{ product.short_description }}</td>

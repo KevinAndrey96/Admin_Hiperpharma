@@ -6,12 +6,7 @@ const Product = use('App/Models/Product')
 class OrderController {
     async index({request, response, view})
     {
-        /*const clients=await Client.query()
-        .with('Orders')
-        .fetch()
-        console.log(clients.toJSON())*/
         const orders = await Order.query().with('Client').orderBy('id', 'desc').fetch()
-        console.log(JSON.stringify(orders.toJSON()))
         return view.render("orders",{orders:orders.toJSON()})
     }
     formatCurrency (locales, currency, fractionDigits, number) {

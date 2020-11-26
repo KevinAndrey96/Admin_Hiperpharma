@@ -4,7 +4,6 @@ class CategoryController {
 
     async new({request, response, view})
     {
-        
         return view.render('add-category')
     }
     async create({request, response, session})

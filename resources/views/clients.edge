@@ -1,7 +1,19 @@
 @layout('layouts.master')
 
 @section('main')
-
+<script>
+	$(document).ready( function () {
+		$('#Clients').DataTable();
+	} );
+	function borrar(id)
+	{
+		var r = confirm("¿Está seguro?");
+		if (r == true) {
+			var formdel = document.getElementById("form-del-"+id);
+  			formdel.submit();
+		}
+	}
+</script>
         <!-- Main Content -->
 		<div class="page-wrapper">
             <div class="container-fluid">
@@ -36,7 +48,7 @@
 								<div class="panel-body">
 									<div class="table-wrap">
 										<div class="">
-											<table id="myTable1" class="table table-hover display  pb-30" >
+											<table id="Clients" class="table table-hover display  pb-30" >
 												<thead>
 												<tr>
 													<th>Id</th>

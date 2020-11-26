@@ -72,5 +72,7 @@ Route.get('logout', 'UserController.logout')
   Route.post("edit-category", "CategoryController.update");
 
   Route.get("orders", "OrderController.index")
+  
+  Route.get('getStats','ProductController.stats')
 
   
