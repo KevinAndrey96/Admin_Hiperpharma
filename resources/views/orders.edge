@@ -3,7 +3,9 @@
 @section('main')
 <script>
 	$(document).ready( function () {
-		$('#Orders').DataTable();
+		$('#Orders').DataTable({
+			"order": [[0, "desc"]]
+		});
 	} );
 	function borrar(id)
 	{
@@ -55,7 +57,8 @@
 														<th>Cliente</th>
 														<th>Valor</th>
 														<th>Fecha Compra</th>
-														<th>Ver pedido</th>
+														<th>Estado</th>
+														<th width="50px">Acción</th>
 													</tr>
 												</thead>
 
@@ -65,12 +68,18 @@
 													<td>{{order.id}}</td>
 													<td>{{order.Client.name}}</td>
 													<td>{{order.value}}</td>
-														
 													<td>{{order.created_at}}</td>
+													<td>
+														@if(order.status=='pending')
+															<button class="btn" style="width: 120px; background-color:goldenrod">Pendiente</button>
+														@elseif(order.status=='approved')
+															<button class="btn" style="width: 120px; background-color:seagreen" value="Aprobado">Aprobado</button>
+														@elseif(order.status=='rejected')
+															<button class="btn" style="width: 120px; background-color:darkred" value="Rechazado">Rechazado</button>
+														@endif
+													</td>
 														<td>
-														<a href="/order-detail/{{order.id}}">
-																<i class="fa fa-file-text-o" aria-hidden="true"></i>
-															</a>	
+															<a href="/order-detail/{{order.id}}"><i class="fa fa-file-text-o" aria-hidden="true"></i></a>
 														</td>
 													</tr>
 													@endeach

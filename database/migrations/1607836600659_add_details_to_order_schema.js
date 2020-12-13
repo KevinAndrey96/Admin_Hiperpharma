@@ -3,18 +3,18 @@
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
 
-class AddGatewayToOrderSchema extends Schema {
+class AddDetailsToOrderSchema extends Schema {
   up () {
     this.table('orders', (table) => {
-      table.string('gateway')
+      table.string('details')
     })
   }
 
   down () {
     this.table('orders', (table) => {
-      table.dropColumn('gateway')
+      table.dropColumn('details')
     })
   }
 }
 
-module.exports = AddGatewayToOrderSchema
+module.exports = AddDetailsToOrderSchema

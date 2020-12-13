@@ -12,7 +12,7 @@ class AddFatherToProductSchema extends Schema {
 
   down () {
     this.table('products', (table) => {
-      table.string('father', 30)
+      table.dropColumn('father')
     })
   }
 }

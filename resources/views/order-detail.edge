@@ -33,26 +33,60 @@
 								<div class="panel-wrapper collapse in">
 									<div class="panel-body">
 										<div class="row">
-											<div class="col-xs-6">
+											<div class="col-md-6">
 												<span class="txt-dark head-font inline-block capitalize-font mb-5">Facturado a:</span>
 												<address class="mb-15">
+
+													<span class="address-head mb-5"></span>
+													{{client.name}} <br>
+													{{client.email}} <br>
+
+												</address>
+
 												<span class="address-head mb-5"></span>
 													{{client.address}} <br>
-													{{client.city}} <br>
+													{{client.city}}, {{client.country}} <br>
 													<b title="Phone">Telefono: </b>{{client.phone}}
+												</address>
+											</div>
+											<div class="col-md-6">
+												<span class="txt-dark head-font inline-block capitalize-font mb-5">Opciones</span>
+											<br><br>
+												<span class="address-head mb-5"></span>
+												<form method="POST" action="{{ route('OrderController.status') }}">
+													{{ csrfField() }}
+													<input type="hidden" value="{{order.id}}" name="id">
+													<input type="hidden" name="status" value="pending">
+													<input type="submit" class="btn" style="width: 200px; background-color:goldenrod" value="Pendiente"><br><br>
+												</form>
+												<form method="POST" action="{{ route('OrderController.status') }}">
+													{{ csrfField() }}
+													<input type="hidden" value="{{order.id}}" name="id">
+													<input type="hidden" name="status" value="approved">
+													<input type="submit" class="btn" style="width: 200px; background-color:seagreen" value="Aprobado"><br><br>
+												</form>
+												<form method="POST" action="{{ route('OrderController.status') }}">
+													{{ csrfField() }}
+													<input type="hidden" value="{{order.id}}" name="id">
+													<input type="hidden" name="status" value="rejected">
+													<input type="submit" class="btn" style="width: 200px; background-color:darkred" value="Rechazado"><br><br>
+												</form>
 												</address>
 											</div>
 											
 										</div>
 										
 										<div class="row">
+											
 											<div class="col-xs-6">
+												<h4>Valor: {{order.value}}</h4>
 												<address>
 													<span class="txt-dark head-font capitalize-font mb-5">Fecha de Pedido:</span>
 													<br>
 												{{order.created_at}}<br>
 												<br>
 												<h5>Referencia de pago: {{order.gateway}}</h5>
+												<span>{{order.details}}</span>
 												</address>
 											</div>
 										</div>

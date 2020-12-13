@@ -4,9 +4,10 @@ const Order = use('App/Models/Order')
 const Client = use('App/Models/Client')
 const Product = use('App/Models/Product')
 class OrderController {
+    
     async index({request, response, view})
     {
-        const orders = await Order.query().with('Client').orderBy('id', 'desc').fetch()
+        const orders = await Order.query().with('Client').orderBy('orders.id', 'desc').fetch()
         return view.render("orders",{orders:orders.toJSON()})
     }
     formatCurrency (locales, currency, fractionDigits, number) {
@@ -17,6 +18,13 @@ class OrderController {
         }).format(number);
         return formatted;
       }
+    async status({request, response, view, params})
+    {
+        var order = await Order.find(request.input("id"));
+        order.status = request.input("status");
+        order.save();
+        return response.redirect('/orders');
+    }
     async details({params, view})
     {
 
